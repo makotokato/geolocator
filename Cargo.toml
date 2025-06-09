@@ -1,0 +1,16 @@
+[package]
+name = "geolocator"
+version = "0.1.0"
+edition = "2024"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-future = "0.2"
+windows-result = "0.3"
+windows = { version = "0.61", features = [ "Devices_Geolocation" ]}
+
+[[example]]
+name = "current_position"
+path = "examples/current_position.rs"
